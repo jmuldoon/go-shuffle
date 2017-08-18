@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/jmuldoon/fisher-yates-shuffle/deck"
+	"github.com/jmuldoon/go-shuffle/deck"
 )
 
 func main() {
@@ -13,6 +13,8 @@ func main() {
 	fmt.Println("---- Before Sort ---")
 	d.Display()
 	d.FisherYatesShuffle()
+	d.PermShuffle()
+	d.FaroShuffle()
 	fmt.Println("---- After Sort ---")
 	d.Display()
 }
