@@ -9,7 +9,7 @@ import (
 func main() {
 	d := deck.Deck{}
 
-	d.Generate()
+	d.Generate("config/poker.yaml")
 	fmt.Println("---- Before Sort ---")
 	d.Display()
 	d.FisherYatesShuffle()

@@ -1,0 +1,33 @@
+---
+Suites:
+  - Club
+  - Spade
+  - Heart
+  - Diamond
+Faces:
+  - Name: Two
+    Value: 2
+  - Name: Three
+    Value: 3
+  - Name: Four
+    Value: 4
+  - Name: Five
+    Value: 5
+  - Name: Six
+    Value: 6
+  - Name: Seven
+    Value: 7
+  - Name: Eight
+    Value: 8
+  - Name: Nine
+    Value: 9
+  - Name: Ten
+    Value: 10
+  - Name: Jack
+    Value: 11
+  - Name: Queen
+    Value: 12
+  - Name: King
+    Value: 13
+  - Name: Ace
+    Value: 14

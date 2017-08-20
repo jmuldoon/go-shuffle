@@ -27,19 +27,21 @@ type Deck struct {
 	length int
 }
 
-// Generate the Deck
-func (d *Deck) Generate() {
-	d.Cards = make([]card.Card, DeckSize)
+// Generate the Deck for the specified config string path,
+// e.g. "config/poker.yaml"
+func (d *Deck) Generate(p string) {
+	cs := card.Set{}
+	cs.ReadSet(p)
+	d.length = len(cs.Suites) * len(cs.CardFaces)
+	d.Cards = make([]card.Card, d.length)
 
 	i := 0
-	for _, f := range card.Faces() {
-		for _, v := range card.Values() {
-			d.Cards[i] = card.Card{Face: f, Value: v}
+	for _, s := range cs.Suites {
+		for _, f := range cs.CardFaces {
+			d.Cards[i] = card.Card{Suite: s, Face: f.Name, Value: f.Value}
 			i++
 		}
 	}
-
-	d.length = len(d.Cards)
 }
 
 // Display prints all the cards in the deck
@@ -67,7 +69,6 @@ func (d *Deck) FisherYatesShuffle() {
 
 // PermShuffle is a shuffle based on the use of the rand.Perm functionality
 func (d *Deck) PermShuffle() {
-	// r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	dst := make([]card.Card, d.length)
 	perm := rand.Perm(d.length)
 	for i, v := range perm {
