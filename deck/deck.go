@@ -9,6 +9,8 @@ import (
 	"github.com/jmuldoon/go-shuffle/card"
 )
 
+const testVersion = 0
+
 // DeckSize is the number of cards contained in the deck
 const (
 	DeckSize = 52
